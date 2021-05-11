@@ -1,0 +1,400 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ececec;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+body.dark {
+  background-color: #161722;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.container {
+  background: url("images/bg-mobile-light.jpg") no-repeat;
+  background-position: top;
+  background-size: contain;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  margin: 0 auto;
+  padding: 1.3em 1.5em;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  width: 375px;
+}
+
+body.dark .container {
+  background: url("images/bg-mobile-dark.jpg") no-repeat;
+  background-position: top;
+  background-size: contain;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.container .change-mode {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 1.6em 0;
+  width: 100%;
+}
+
+.container .change-mode .title {
+  color: #fafafa;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.container .change-mode .img-mode {
+  cursor: pointer;
+  height: 20px;
+}
+
+.container .create-todo {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fafafa;
+  border-radius: 0.4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  margin-bottom: 1em;
+  padding: 0 1em;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.container .create-todo .check {
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.container .create-todo .check {
+  border: 1px solid #e4e5f1;
+  border-radius: 900px;
+  height: 20px;
+  margin-right: 1em;
+  max-height: 20px;
+  min-width: 20px;
+  width: 20px;
+}
+
+.container .create-todo .new-todo {
+  border: 1px solid transparent;
+  background-color: transparent;
+  outline: none;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  width: 100%;
+}
+
+body.dark .container .create-todo .new-todo {
+  color: #cacde8;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+body.dark .container .create-todo {
+  background-color: #25273c;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.container .list-todo {
+  background-color: #fafafa;
+  border-radius: 0.4em;
+  margin-bottom: 1em;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.container .list-todo .list {
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.container .list-todo .list li {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #e4e5f1;
+  color: #484b6a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  padding: 1em 1.2em;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+body.dark .container .list-todo .list li {
+  color: #cacde8;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+body.dark .container .list-todo .list li {
+  border-bottom: 1px solid #393a4c;
+}
+
+.container .list-todo .list li .check-list {
+  cursor: pointer;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.container .list-todo .list li .check-list {
+  border: 1px solid #e4e5f1;
+  border-radius: 900px;
+  height: 20px;
+  margin-right: 1em;
+  max-height: 20px;
+  min-width: 20px;
+  width: 20px;
+}
+
+.container .list-todo .list li .item-text {
+  cursor: pointer;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.container .list-todo .list li .ex {
+  cursor: pointer;
+  height: 12px;
+}
+
+.container .list-todo .list-footer {
+  color: #9394a5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  padding: 1em 1.2em;
+}
+
+body.dark .container .list-todo .list-footer {
+  color: #4d5066;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.container .list-todo .list-footer .clear {
+  cursor: pointer;
+}
+
+.container .list-todo .list-footer .clear:hover {
+  color: #484b6a;
+}
+
+body.dark .container .list-todo .list-footer .clear:hover {
+  color: #e4e5f1;
+}
+
+body.dark .container .list-todo {
+  background-color: #25273c;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.container .buttons-todo {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fafafa;
+  border-radius: 0.4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50px;
+  padding: 0 1em;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.container .buttons-todo a {
+  color: #9394a5;
+  font-weight: 700;
+  margin: 0.5em;
+  text-decoration: none;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.container .buttons-todo a:hover {
+  color: #484b6a;
+}
+
+body.dark .container .buttons-todo a {
+  color: #4d5066;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+body.dark .container .buttons-todo a:hover {
+  color: #e4e5f1;
+}
+
+.container .buttons-todo .link-active {
+  color: #3a7bfd;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+body.dark .container .buttons-todo .link-active {
+  color: #3a7bfd;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+body.dark .container .buttons-todo {
+  background-color: #25273c;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.container .suggest {
+  color: #9394a5;
+  margin-top: 3em;
+  text-align: center;
+}
+
+.underlined {
+  color: #9394a5;
+  text-decoration: line-through;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.checked {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+  background: linear-gradient(#57ddff, #c058f3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+@media (min-width: 1440px) {
+  .container {
+    background: url("images/bg-desktop-light.jpg") no-repeat;
+    background-position: top;
+    background-size: contain;
+    padding: 1.7cm 15.5cm;
+    width: 1440px;
+  }
+  body.dark .container {
+    background: url("images/bg-desktop-dark.jpg") no-repeat;
+    background-position: top;
+    background-size: contain;
+  }
+  .container .change-mode {
+    margin: 2em 0;
+  }
+  .container .change-mode .title {
+    font-size: 3em;
+    letter-spacing: 18px;
+  }
+  .container .change-mode .img-mode {
+    height: 27px;
+  }
+  .container .create-todo {
+    height: 70px;
+    margin-bottom: 1.7em;
+    margin-top: 1.3em;
+    padding: 0 1.5em;
+  }
+  .container .create-todo .check {
+    border: 1px solid #e4e5f1;
+    border-radius: 900px;
+    height: 25px;
+    margin-right: 1em;
+    max-height: 25px;
+    min-width: 25px;
+    width: 25px;
+  }
+  .container .list-todo {
+    border-radius: 0.4em 0.4em 0 0;
+    margin-bottom: 0;
+  }
+  .container .list-todo .list li {
+    padding: 1.5em 1.5em;
+  }
+  .container .list-todo .list li .check-list {
+    border: 1px solid #e4e5f1;
+    border-radius: 900px;
+    height: 25px;
+    margin-right: 1em;
+    max-height: 25px;
+    min-width: 25px;
+    width: 25px;
+  }
+  .container .list-todo .list li .item-text:hover ~ .ex {
+    display: block;
+  }
+  .container .list-todo .list li .ex {
+    display: none;
+    height: 17px;
+  }
+  .container .list-todo .list li .ex:hover {
+    display: block;
+  }
+  .container .list-todo .list-footer {
+    border-bottom: 1px solid #e4e5f1;
+    padding: 1.5em 1.5em;
+  }
+  body.dark .container .list-todo .list-footer {
+    border-bottom: 1px solid #393a4c;
+  }
+  .container .buttons-todo {
+    border-radius: 0 0 0.4em 0.4em;
+    height: 0;
+    position: relative;
+  }
+  .container .buttons-todo a {
+    position: relative;
+    top: -2em;
+  }
+}
+
+.item-dragOver {
+  border-bottom: 57px solid #e4e5f1 !important;
+}
+
+body.dark .item-dragOver {
+  border-bottom: 57px solid #393a4c !important;
+}
+/*# sourceMappingURL=index.css.map */

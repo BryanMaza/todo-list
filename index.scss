@@ -1,0 +1,326 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+//colores Light
+$whiteLight: hsl(0, 0%, 98%);
+$grayLigth: hsl(0, 0%, 98%);
+$textGrayLight: hsl(233, 11%, 84%);
+$textGrowLight: hsl(236, 9%, 61%);
+$textBlackLight: hsl(235, 19%, 35%);
+
+//colors dark
+$bgDark: hsl(235, 21%, 11%);
+$desaturatedDark: hsl(235, 24%, 19%);
+$GraylightDark: hsl(234, 39%, 85%);
+$GrayHoverDark: hsl(236, 33%, 92%);
+$blueGrayDark: hsl(234, 11%, 52%);
+$grayBlueDark: hsl(233, 14%, 35%);
+$veryBlueGrayDark: hsl(237, 14%, 26%);
+
+@mixin bgDarkMode($bgColor) {
+  body.dark & {
+    background-color: $bgColor;
+    transition: 0.5s all;
+  }
+}
+@mixin textDarkMode($color) {
+  body.dark & {
+    color: $color;
+    transition: 0.5s all;
+  }
+}
+
+@mixin checkRadius {
+  & {
+    border: 1px solid hsl(236, 33%, 92%);
+    border-radius: 900px;
+    height: 20px;
+    margin-right: 1em;
+    max-height: 20px;
+    min-width: 20px;
+    width: 20px;
+  }
+}
+@mixin checkRadiusDesktop {
+  & {
+    border: 1px solid hsl(236, 33%, 92%);
+    border-radius: 900px;
+    height: 25px;
+    margin-right: 1em;
+    max-height: 25px;
+    min-width: 25px;
+    width: 25px;
+  }
+}
+body {
+  background-color: #ececec;
+  display: flex;
+  height: 100vh;
+  transition: all 0.5s;
+  &.dark {
+    background-color: $bgDark;
+    transition: 0.5s all;
+  }
+}
+
+.container {
+  background: url("images/bg-mobile-light.jpg") no-repeat;
+  background-position: top;
+  background-size: contain;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  margin: 0 auto;
+  padding: 1.3em 1.5em;
+  transition: 0.5s all;
+  width: 375px;
+  body.dark & {
+    background: url("images/bg-mobile-dark.jpg") no-repeat;
+    background-position: top;
+    background-size: contain;
+    transition: 0.5s all;
+  }
+  .change-mode {
+    display: inline-flex;
+    justify-content: space-between;
+    margin: 1.6em 0;
+    width: 100%;
+
+    .title {
+      color: $whiteLight;
+      font-weight: 700;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+    .img-mode {
+      cursor: pointer;
+      height: 20px;
+    }
+  }
+  .create-todo {
+    align-items: center;
+    background-color: $whiteLight;
+    border-radius: 0.4em; //
+    display: flex;
+    height: 50px; //
+    margin-bottom: 1em; //
+    padding: 0 1em; //
+    transition: 0.5s all;
+    .check {
+      @include checkRadius();
+      transition: 0.5s all;
+    }
+    .new-todo {
+      @include textDarkMode($GraylightDark);
+      border: 1px solid transparent;
+      background-color: transparent;
+      outline: none;
+      transition: 0.5s all;
+      width: 100%;
+    }
+
+    @include bgDarkMode($desaturatedDark);
+  }
+
+  .list-todo {
+    // box-shadow: 2px 4px 25px 1px #dfdfdf;
+    background-color: $whiteLight;
+    border-radius: 0.4em;
+    margin-bottom: 1em;
+    transition: 0.5s all;
+    .list {
+      transition: 0.5s all;
+      li {
+        align-items: center;
+        border-bottom: 1px solid hsl(236, 33%, 92%);
+        color: hsl(235, 19%, 35%);
+        display: flex;
+        list-style: none;
+        padding: 1em 1.2em;
+        transition: 0.5s all;
+        @include textDarkMode($GraylightDark);
+        body.dark & {
+          border-bottom: 1px solid $veryBlueGrayDark;
+        }
+
+        .check-list {
+          cursor: pointer;
+          transition: 0.5s all;
+          @include checkRadius();
+        }
+        .item-text {
+          cursor: pointer;
+          flex-grow: 2;
+          transition: 0.5s all;
+        }
+        .ex {
+          cursor: pointer;
+          height: 12px;
+        }
+      }
+    }
+    .list-footer {
+      color: $textGrowLight;
+      display: flex;
+      justify-content: space-between;
+      transition: 0.5s all;
+      padding: 1em 1.2em;
+      @include textDarkMode($grayBlueDark);
+
+      .clear {
+        cursor: pointer;
+        &:hover {
+          color: $textBlackLight;
+        }
+        
+        body.dark & {
+          &:hover {
+            color: $GrayHoverDark;
+          }
+        }
+      }
+    }
+
+    @include bgDarkMode($desaturatedDark);
+  }
+  .buttons-todo {
+    align-items: center;
+    background-color: $whiteLight;
+    border-radius: 0.4em;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    padding: 0 1em;
+    transition: 0.5s all;
+
+    a {
+      color: $textGrowLight;
+      font-weight: 700;
+      margin: 0.5em;
+      text-decoration: none;
+      transition: 0.5s all;
+      &:hover {
+        color: $textBlackLight;
+      }
+      @include textDarkMode($grayBlueDark);
+      body.dark & {
+        &:hover {
+          color: $GrayHoverDark;
+        }
+      }
+    }
+
+    .link-active {
+      color: hsl(220, 98%, 61%);
+      transition: 0.5s all;
+      @include textDarkMode(hsl(220, 98%, 61%));
+    }
+    @include bgDarkMode($desaturatedDark);
+  }
+  .suggest {
+    color: $textGrowLight;
+    margin-top: 3em;
+    text-align: center;
+  }
+}
+
+.underlined {
+  color: $textGrowLight;
+  text-decoration: line-through;
+  transition: 0.5s all;
+}
+.checked {
+  align-items: center;
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  display: flex;
+  justify-content: center;
+  transition: 0.5s all;
+}
+
+
+
+@media (min-width: 1440px) {
+  .container {
+    background: url("images/bg-desktop-light.jpg") no-repeat;
+    background-position: top;
+    background-size: contain;
+    padding: 1.7cm 15.5cm;
+    width: 1440px;
+
+    body.dark & {
+      background: url("images/bg-desktop-dark.jpg") no-repeat;
+      background-position: top;
+      background-size: contain;
+    }
+
+    .change-mode {
+      margin: 2em 0;
+      .title {
+        font-size: 3em;
+        letter-spacing: 18px;
+      }
+      .img-mode {
+        height: 27px;
+      }
+    }
+
+    .create-todo {
+      height: 70px;
+      margin-bottom: 1.7em;
+      margin-top: 1.3em;
+      padding: 0 1.5em;
+      .check {
+        @include checkRadiusDesktop();
+      }
+    }
+
+    .list-todo {
+      border-radius: 0.4em 0.4em 0 0;
+      margin-bottom: 0;
+      .list {
+        li {
+          padding: 1.5em 1.5em;
+          .check-list {
+            @include checkRadiusDesktop();
+          }
+          .item-text {
+            &:hover ~ .ex {
+              display: block;
+            }
+          }
+          .ex {
+            display: none;
+            height: 17px;
+            &:hover {
+              display: block;
+            }
+          }
+        }
+      }
+      .list-footer {
+        border-bottom: 1px solid hsl(236, 33%, 92%);
+        padding: 1.5em 1.5em;
+
+        body.dark & {
+          border-bottom: 1px solid $veryBlueGrayDark;
+        }
+      }
+    }
+    .buttons-todo {
+      border-radius: 0 0 0.4em 0.4em;
+      height: 0;
+      position: relative;
+      a {
+        position: relative;
+        top: -2em;
+      }
+    }
+  }
+}
+
+.item-dragOver{
+  border-bottom: 57px solid #e4e5f1 !important;
+  body.dark & {
+    border-bottom: 57px solid #393a4c !important;
+  }
+}
